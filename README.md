@@ -1,5 +1,7 @@
 # 99 Bottles
 
+Exercise from Sandi Metz's book 99 bottles of oop
+
 ## Installing Ruby
 
 ### Windows
