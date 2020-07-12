@@ -5,9 +5,12 @@ class Bottles
 		when 0
 			"No more bottles of beer on the wall, no more bottles of beer.\n" +
 			"Go to the store and buy some more, 99 bottles of beer on the wall.\n"
+		when 1
+			"1 bottle of beer on the wall, 1 bottle of beer.\n" +
+			"Take it down and pass it around, no more bottles of beer on the wall.\n"
 		else
-			"#{num} #{container(num)} of beer on the wall, #{num} #{container(num)} of beer.\n" +
-			"Take #{pronoun(num)} down and pass it around, #{quantity(num-1)} #{container(num-1)} of beer on the wall.\n"
+			"#{num} bottles of beer on the wall, #{num} #{container(num)} of beer.\n" +
+			"Take one down and pass it around, #{num-1} #{container(num-1)} of beer on the wall."
 		end
 	end
 	
@@ -16,22 +19,6 @@ class Bottles
 			"bottle"
 		else
 			"bottles"
-		end
-	end
-	
-	def pronoun(num)
-		if num == 1
-			"it"
-		else
-			"one"
-		end
-	end
-	
-	def quantity(num=0)
-		if num == 0
-			"no more"
-		else
-			num
 		end
 	end
 	
