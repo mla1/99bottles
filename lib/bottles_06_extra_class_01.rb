@@ -1,12 +1,27 @@
 class Bottles	
 	def verse(num)
-		bottle_number = BottleNumber.new(num)
-		next_bottle_number = BottleNumber.new(bottle_number.successor)
-
-		"#{bottle_number} of beer on the wall, ".capitalize + 
-		"#{bottle_number} of beer.\n" +
-		"#{bottle_number.action}, ",
-		"#{next_bottle_number} of beer on the wall.\n"
+		"#{quantity(num).capitalize} #{container(num)} of beer on the wall, #{quantity(num)} #{container(num)} of beer.\n" +
+		"#{action(num)}, #{quantity(successor(num))} #{container(successor(num))} of beer on the wall.\n"
+	end
+	
+	def container(num)
+		BottleNumber.new(num).container
+	end
+	
+	def successor(num)
+		BottleNumber.new(num).successor
+	end
+	
+	def pronoun(num)
+		BottleNumber.new(num).pronoun
+	end
+	
+	def quantity(num)
+		BottleNumber.new(num).quantity
+	end
+	
+	def action(num)
+		BottleNumber.new(num).action
 	end
 	
 	def verses(from, to)
@@ -26,10 +41,6 @@ class BottleNumber
 	attr_reader :num
 	def initialize(number)
 		@num = number
-	end
-
-	def to_s
-		"#{quantity} #{container}"
 	end
 	
 	def container()
